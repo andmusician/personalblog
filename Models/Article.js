@@ -1,5 +1,6 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const connection = require("../database/database");
+const Category = require("./Category");
 
 const Article = connection.define("articles", {
   title: {
@@ -15,6 +16,9 @@ const Article = connection.define("articles", {
     allowNull: false,
   },
 });
+
+Category.hasMany(Article);
+Article.belongsTo(Category);
 
 Article.sync({ force: false }).then(() => {});
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const articleRepository = require("../Repositories/ArticleRepository");
 
 router.get("/articles", (req, res) => {
   res.send("Rota de Artigos");

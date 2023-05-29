@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const categoriesRepository = require("../Repositories/CategoryRepository");
 
 router.get("/categories", (req, res) => {
   res.send("Rota de Categorias");
