@@ -22,6 +22,15 @@ class CategoryRepository {
     }
   }
 
+  async findById(id) {
+    try {
+      const instance = await Category.findByPk(id);
+      return instance;
+    } catch (error) {
+      throw new Error("Erro ao obter as instâncias de Category.");
+    }
+  }
+
   // Método para atualizar uma instância
   async update(id, data) {
     try {
