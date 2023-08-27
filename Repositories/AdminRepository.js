@@ -12,6 +12,13 @@ class AdminRepository {
     }
   }
 
+  async findOne(email) {
+    try {
+      const instance = await Admin.findOne({ where: { email: email } });
+      return instance;
+    } catch (error) {}
+  }
+
   // Método para obter todas as instâncias
   async read() {
     try {
